@@ -112,13 +112,15 @@
 	function merge(clone, recursive, argv) {
 
 		var result = argv[0],
-			size = argv.length;
+			size = argv.length,
+			index = 1;
 
-		if (clone || typeOf(result) !== 'object')
-
+		if (clone || typeOf(result) !== 'object') {
 			result = {};
+			index = 0;
+		}
 
-		for (var index=0;index<size;++index) {
+		for (index;index<size;++index) {
 
 			var item = argv[index],
 
